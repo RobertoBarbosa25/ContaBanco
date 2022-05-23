@@ -35,11 +35,18 @@ public class Pessoa {
         this.cpf = cpf;
         this.saldo = saldo;
     }
-    public void extrato(){
-        System.out.println("-----EXTRATO-----");
-        System.out.println("Nome: " + this.nome);
-        System.out.println("CPF: " + this.cpf);
-        System.out.printf("Saldo atual: %.2f\n",this.saldo);
+    public void extrato() {
+        String cpf4;
+        System.out.println("Digite seu CPF: ");
+        cpf4 = this.scn.next();
+        if (!cpf.equals(cpf4)) {
+            System.out.println("Digite um CPF Válido!");
+        } else {
+            System.out.println("-----EXTRATO-----");
+            System.out.println("Nome: " + this.nome);
+            System.out.println("CPF: " + this.cpf);
+            System.out.printf("Saldo atual: %.2f\n", this.saldo);
+        }
     }
     public void sacar(Double valor) {
         if(valor > 0 && this.getSaldo() >= valor) {
